@@ -1,0 +1,13 @@
+numpy>=2.3.0
+pandas>=2.3.0
+scipy>=1.16.0
+pydantic>=2.11.7
+matplotlib>=3.10.0
+altair>=5.5.0
+streamlit>=1.49.0
+goatools>=1.5.1
+loguru>=0.7.3
+pytest
+openpyxl
+tqdm
+stqdm

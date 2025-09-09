@@ -1,0 +1,62 @@
+GO:0006310	DNA recombination
+GO:0006281	DNA repair
+GO:0006260	DNA replication
+GO:0030036	actin cytoskeleton organization
+GO:0030437	ascospore formation
+GO:0006914	autophagy
+GO:0005975	carbohydrate metabolic process
+GO:0007155	cell adhesion
+GO:0071554	cell wall organization or biogenesis
+GO:0006520	cellular amino acid metabolic process
+GO:0006325	chromatin organization
+GO:0000747	conjugation with cellular fusion
+GO:0002181	cytoplasmic translation
+GO:0098754	detoxification
+GO:0180047	dolichol phosphate mannose biosynthetic process
+GO:0007163	establishment or maintenance of cell polarity
+GO:0006091	generation of precursor metabolites and energy
+GO:0009101	glycoprotein biosynthetic process
+GO:0180046	GPI anchored protein biosynthesis
+GO:0098771	inorganic ion homeostasis
+GO:0016226	iron-sulfur cluster assembly
+GO:0006629	lipid metabolic process
+GO:0016071	mRNA metabolic process
+GO:0140013	meiotic nuclear division
+GO:0061024	membrane organization
+GO:0000226	microtubule cytoskeleton organization
+GO:0110134	meiotic drive
+GO:0140053	mitochondrial gene expression
+GO:0007005	mitochondrion organization
+GO:0000281	mitotic cytokinesis
+GO:0000070	mitotic sister chromatid segregation
+GO:0071941	nitrogen cycle metabolic process
+GO:0055086	nucleobase-containing small molecule metabolic process
+GO:0006913	nucleocytoplasmic transport
+GO:0140056	organelle localization by membrane tethering
+GO:0019637	organophosphate metabolic process
+GO:0007031	peroxisome organization
+GO:0006595	polyamine metabolic process
+GO:0030163	protein catabolic process
+GO:0065003	protein-containing complex assembly
+GO:0006457	protein folding
+GO:0051604	protein maturation
+GO:0070647	protein modification by small protein conjugation or removal
+GO:0006605	protein targeting
+GO:0042559	pteridine-containing compound biosynthetic process
+GO:0044772	mitotic cell cycle phase transition
+GO:0006355	regulation of transcription, DNA-templated
+GO:0042254	ribosome biogenesis
+GO:0019748	secondary metabolic process
+GO:0023052	signaling
+GO:0007062	sister chromatid cohesion
+GO:0016074	snoRNA metabolic process
+GO:0016073	snRNA metabolic process
+GO:0006790	sulfur compound metabolic process
+GO:0006399	tRNA metabolic process
+GO:0032200	telomere organization
+GO:0033013	tetrapyrrole metabolic process
+GO:0006351	transcription, DNA-templated
+GO:0055085	transmembrane transport
+GO:0006743	ubiquinone metabolic process
+GO:0016192	vesicle-mediated transport
+GO:0006766	vitamin metabolic process
