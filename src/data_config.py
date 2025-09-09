@@ -231,6 +231,13 @@ def get_haploid_config() -> DataConfig:
 
     return config
 
+def get_custom_config(**kwargs) -> DataConfig:
+    """Get a custom data configuration."""
+    config = DataConfig.create_default()
+    for key, value in kwargs.items():
+        setattr(config, key, value)
+    return config
+
 def validate_config(config: DataConfig) -> None:
     """Validate a data configuration."""
     config.validate_all_paths()
