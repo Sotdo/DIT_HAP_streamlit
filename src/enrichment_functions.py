@@ -447,7 +447,7 @@ def display_enrichment_results(enrichment_results: pd.DataFrame) -> alt.Chart:
                 alt.Y(
                     "term:N",
                     axis=alt.Axis(
-                        grid=True, labelLimit=500, title="Term", orient="right"
+                        grid=True, labelLimit=500, title="", orient="right"
                     ),
                     sort=alt.EncodingSortField(field="gene_ratio", order="descending"),
                 ),
