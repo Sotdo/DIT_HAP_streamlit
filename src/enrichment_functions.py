@@ -29,8 +29,8 @@ STRING_METHOD = Literal["get_string_ids", "enrichment"]
 STRING_SPECIES_ID = "4896"
 STRING_CALLER_IDENTITY = "dit-hap.streamlit.app"
 STRING_SEPARATOR = "%0d"
-MAX_RETRIES = 3
-RETRY_DELAY = 5
+MAX_RETRIES = 5
+RETRY_DELAY = 10
 
 # ================================= Helper Functions =================================
 def mapslim(term: str, dag: GODag, slim_dag: dict) -> tuple[set[str], set[str]]:
@@ -272,7 +272,7 @@ def format_string_enrichment_results(enrichment_df: pd.DataFrame, query_genes: l
     enrichment_df["ratio_in_pop"] = str(enrichment_df["study_count"]) + "/" + str(enrichment_df["pop_count"])
     enrichment_df["gene_ratio"] = round(enrichment_df["study_count"] / enrichment_df["study_n"], 2)
     enrichment_df["term_coverage"] = round(enrichment_df["study_count"] / enrichment_df["pop_count"], 2)
-    enrichment_df = enrichment_df[list(enrichment_df.keys())]
+    enrichment_df = enrichment_df[list(renamed_column_names.values())]
 
     namespace_description = {
         "Process": "Biological Process (Gene Ontology)",
@@ -301,7 +301,7 @@ def stringdb_enrichment(query_genes, bg_genes):
     """Perform STRING enrichment analysis using the STRING API."""
 
     get_string_id_params = {
-        "identifiers": "\r".join(bg_genes),
+        "identifiers": STRING_SEPARATOR.join(bg_genes),
         "species": STRING_SPECIES_ID,
         "limit": 1,
         "echo_query": 1,
@@ -314,7 +314,7 @@ def stringdb_enrichment(query_genes, bg_genes):
     enrichment_params = {
         "identifiers": STRING_SEPARATOR.join(query_genes),
         "species": STRING_SPECIES_ID,
-        "background_string_identifiers": "\r".join(get_string_id_response),
+        "background_string_identifiers": STRING_SEPARATOR.join(get_string_id_response),
         "caller_identity": STRING_CALLER_IDENTITY
     }
     # Parse results
