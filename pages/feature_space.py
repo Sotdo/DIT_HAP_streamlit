@@ -37,18 +37,18 @@ def load_data():
 def display_feature_space(query_genes: list[str], gene_level: GeneLevelData) -> alt.Chart:
     """Display the feature space for the query genes."""
 
-    all_gene_feature_space = alt.Chart(gene_level.gene_level_LFCs).mark_circle(opacity=0.6).encode(
+    all_gene_feature_space = alt.Chart(gene_level.gene_level_fitting_results).mark_circle(opacity=0.6).encode(
         x=alt.X("um:Q", title="Depletion rate"),
         y=alt.Y("lam:Q", title="Depletion lag"),
         color=alt.value("lightgray"),
-        tooltip=gene_level.gene_level_LFCs.columns.tolist()
+        tooltip=gene_level.gene_level_fitting_results.columns.tolist()
     )
 
-    query_gene_feature_space = alt.Chart(gene_level.gene_level_LFCs.loc[query_genes]).mark_circle(opacity=0.6).encode(
+    query_gene_feature_space = alt.Chart(gene_level.gene_level_fitting_results.loc[query_genes]).mark_circle(opacity=0.6).encode(
         x=alt.X("um:Q", title="Depletion rate"),
         y=alt.Y("lam:Q", title="Depletion lag"),
         color=alt.value("red"),
-        tooltip=gene_level.gene_level_LFCs.columns.tolist()
+        tooltip=gene_level.gene_level_fitting_results.columns.tolist()
     )
 
     return all_gene_feature_space + query_gene_feature_space
