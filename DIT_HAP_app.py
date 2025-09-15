@@ -6,7 +6,7 @@ enrichment_page = st.Page("pages/enrichment_analysis.py", title="Enrichment anal
 
 pg = st.navigation(
         {
-            "Visualization": [plot_page],
+            "Visualization": [plot_page, feature_space_page],
             "Analysis": [enrichment_page],
         }
     )
