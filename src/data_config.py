@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 from typing import Optional, List
 
 # ================================= Constants =================================
-POMBASE_DATA_PATH = Path("./data/resource/pombase_data/2025-08-01")
+POMBASE_DATA_PATH = Path("./data/resource/pombase_data/2025-09-01")
 RESOURCE_PATH = Path("./data/resource")
 RAW_DATA_PATH = Path("./data/raw/HD_DIT_HAP")
 LONG_TIMECOURSE_DATA_PATH = Path("./data/raw/Long_timecourse_data")
