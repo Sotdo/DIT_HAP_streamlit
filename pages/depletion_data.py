@@ -175,7 +175,7 @@ def main():
                     st.altair_chart(combined_plot, use_container_width=True, theme=None)
             else:
                 with col1:
-                    st.warning("No data found")
+                    st.warning("⚠️")
                 with col2:
                     st.warning("No data found")
             if has_data_long_timecourse:
@@ -185,7 +185,7 @@ def main():
                     st.altair_chart(combined_plot_long_timecourse, use_container_width=True, theme=None)
             else:
                 with col3:
-                    st.warning("No data found")
+                    st.warning("⚠️")
                 with col4:
                     st.warning("No data found")
             if has_data_haploid:
@@ -195,7 +195,7 @@ def main():
                     st.altair_chart(combined_plot_haploid, use_container_width=True, theme=None)
             else:
                 with col5:
-                    st.warning("No data found")
+                    st.warning("⚠️")
                 with col6:
                     st.warning("No data found")
 
