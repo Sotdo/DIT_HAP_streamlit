@@ -1,0 +1,33 @@
+FYPO:0000005	abnormal cell morphology
+FYPO:0000032	abnormal cytokinesis
+FYPO:0006551	abnormal gene expression
+FYPO:0000054	abnormal microtubule cytoskeleton organization
+FYPO:0000120	abnormal spindle
+FYPO:0000121	abnormal sporulation
+FYPO:0000138	localization phenotype
+FYPO:0000139	cell population growth phenotype
+FYPO:0000293	DNA metabolism phenotype
+FYPO:0000294	RNA metabolism phenotype
+FYPO:0000298	cellular response phenotype
+FYPO:0000301	mating phenotype
+FYPO:0000337	abnormal mitosis
+FYPO:0000631	cell cycle phenotype
+FYPO:0000641	abnormal chromosome organization
+FYPO:0000653	DNA binding phenotype
+FYPO:0000654	catalytic activity phenotype
+FYPO:0000702	protein-protein interaction phenotype
+FYPO:0001320	vegetative cell phenotype
+FYPO:0002058	viable cell population
+FYPO:0002059	inviable cell population
+FYPO:0001720	abnormal transport
+FYPO:0002131	protein-RNA interaction phenotype
+FYPO:0002274	abnormal protein metabolic process
+FYPO:0002399	abnormal microtubule cytoskeleton
+FYPO:0002403	abnormal nucleus
+FYPO:0002494	abnormal protein modification
+FYPO:0002682	increased resistance to chemical
+FYPO:0002683	increased sensitivity to chemical
+FYPO:0002946	abnormal cell wall
+FYPO:0004803	abnormal actin cytoskeleton organization
+FYPO:0004805	abnormal cell wall organization
+FYPO:0005568	abnormal cell polarity

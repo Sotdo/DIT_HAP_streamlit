@@ -1,0 +1,70 @@
+GO:0042124	1,3-beta-glucanosyltransferase activity
+GO:0016887	ATPase activity
+GO:0003700	DNA-binding transcription factor activity
+GO:0003924	GTPase activity
+GO:0003779	actin binding
+GO:0038024	cargo receptor activity
+GO:0140097	catalytic activity, acting on DNA
+GO:0140098	catalytic activity, acting on RNA
+GO:0140096	catalytic activity, acting on a protein
+GO:0140101	catalytic activity, acting on a tRNA
+GO:0098631	cell adhesion mediator activity
+GO:0009975	cyclase activity
+GO:0019213	deacetylase activity
+GO:0015036	disulfide oxidoreductase activity
+GO:0030234	enzyme regulator activity
+GO:0004527	exonuclease activity
+GO:0140223	general transcription initiation factor activity
+GO:0005085	guanyl-nucleotide exchange factor activity
+GO:0032452	histone demethylase activity
+GO:0016810	hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
+GO:0016788	hydrolase activity, acting on ester bonds
+GO:0016798	hydrolase activity, acting on glycosyl bonds
+GO:0140303	intramembrane lipid transporter activity
+GO:0016853	isomerase activity
+GO:0016301	kinase activity
+GO:0016874	ligase activity
+GO:0008289	lipid binding
+GO:0120013	lipid transfer activity
+GO:0016829	lyase activity
+GO:0008017	microtubule binding
+GO:0060090	molecular adaptor activity
+GO:0140104	molecular carrier activity
+GO:0098772	molecular function regulator
+GO:0140313	molecular sequestering activity
+GO:0003774	motor activity
+GO:0140142	nucleocytoplasmic carrier activity
+GO:0047429	nucleoside-triphosphate diphosphatase activity
+GO:0016779	nucleotidyltransferase activity
+GO:0016491	oxidoreductase activity
+GO:0008233	peptidase activity
+GO:0034212	peptide N-acetyltransferase activity
+GO:0051920	peroxiredoxin activity
+GO:0005186	pheromone activity
+GO:0004721	phosphoprotein phosphatase activity
+GO:0016780	phosphotransferase activity, for other substituted phosphate groups
+GO:0033558	protein deacetylase activity
+GO:0004672	protein kinase activity
+GO:0008276	protein methyltransferase activity
+GO:0140311	protein sequestering activity
+GO:0031386	protein tag
+GO:0140318	protein transporter activity
+GO:0005048	signal sequence binding
+GO:0038023	signaling receptor activity
+GO:0140299	small molecule sensor activity
+GO:0005198	structural molecule activity
+GO:0061776	topological DNA entrapment activity
+GO:0003713	transcription coactivator activity
+GO:0003712	transcription coregulator activity
+GO:0003711	transcription elongation regulator activity
+GO:0016746	transferase activity, transferring acyl groups
+GO:0016744	transferase activity, transferring aldehyde or ketonic groups
+GO:0016765	transferase activity, transferring alkyl or aryl (other than methyl) groups
+GO:0016757	transferase activity, transferring glycosyl groups
+GO:0016769	transferase activity, transferring nitrogenous groups
+GO:0016741	transferase activity, transferring one-carbon groups
+GO:0016782	transferase activity, transferring sulfur-containing groups
+GO:0045182	translation regulator activity
+GO:0022857	transmembrane transporter activity
+GO:0019787	ubiquitin-like protein transferase activity
+GO:0051082	unfolded protein binding
