@@ -88,7 +88,7 @@ def display_insertion_level_data(gene_length: int, insertion_level_anno_and_resu
         x=alt.X("Distance_to_start_codon:Q", title="Distance to start codon", scale=alt.Scale(domain=(0, gene_length))),
         y=alt.Y("um:Q", title="DR", scale=alt.Scale(domain=(-0.5, 1.5))),
         color=alt.condition(point_selector, "Insertion_direction:N", alt.value("lightgray"), legend=alt.Legend(orient="right", title="Insertion direction")),
-        size=alt.Size("baseMean:Q", title="baseMean", scale=alt.Scale(type='log')),
+        size=alt.Size("baseMean:Q", title="baseMean", scale=alt.Scale(type='linear')),
         tooltip=insertion_level_anno_and_results.columns.tolist()
     ).add_params(point_selector)
 
