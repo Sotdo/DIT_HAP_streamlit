@@ -76,36 +76,39 @@ def get_gene_result(
     insertion_level: InsertionLevelData,
     gene_level: GeneLevelData,
     gene_body_plot: alt.Chart
-) -> tuple[pd.DataFrame, alt.Chart]:
+) -> tuple[pd.DataFrame, alt.Chart, bool]:
     """Get the gene result for a given gene."""
-    insertion_level_anno_and_results, insertion_level_data = get_insertion_level_data(gene, insertion_level, timepoints)
-    gene_level_fitting_results_in_current_gene, gene_level_data = get_gene_level_data(gene, gene_level, timepoints)
-    
-    insertion_level_data_plot1, insertion_level_data_plot2 = display_insertion_level_data(
-        gene_length, 
-        insertion_level_anno_and_results, 
-        insertion_level_data,
-        timepoints
-    )
-    
-    gene_level_DR_line, gene_level_data_plot, DL_line_plot, DR_line_plot, fitting_curve_plot = display_gene_level_data(
-        gene_level_fitting_results_in_current_gene, 
-        gene_level_data,
-        timepoints
-    )
+    try:
+        insertion_level_anno_and_results, insertion_level_data = get_insertion_level_data(gene, insertion_level, timepoints)
+        gene_level_fitting_results_in_current_gene, gene_level_data = get_gene_level_data(gene, gene_level, timepoints)
+        
+        insertion_level_data_plot1, insertion_level_data_plot2 = display_insertion_level_data(
+            gene_length, 
+            insertion_level_anno_and_results, 
+            insertion_level_data,
+            timepoints
+        )
+        
+        gene_level_DR_line, gene_level_data_plot, DL_line_plot, DR_line_plot, fitting_curve_plot = display_gene_level_data(
+            gene_level_fitting_results_in_current_gene, 
+            gene_level_data,
+            timepoints
+        )
 
-    combined_plot = combine_plots(
-        gene_body_plot, 
-        insertion_level_data_plot1, 
-        insertion_level_data_plot2, 
-        gene_level_DR_line, 
-        gene_level_data_plot, 
-        DL_line_plot, 
-        DR_line_plot, 
-        fitting_curve_plot
-    )
+        combined_plot = combine_plots(
+            gene_body_plot, 
+            insertion_level_data_plot1, 
+            insertion_level_data_plot2, 
+            gene_level_DR_line, 
+            gene_level_data_plot, 
+            DL_line_plot, 
+            DR_line_plot, 
+            fitting_curve_plot
+        )
 
-    return gene_level_fitting_results_in_current_gene, combined_plot
+        return gene_level_fitting_results_in_current_gene, combined_plot, True
+    except Exception as e:
+        return None, None, False
 
 
 def main():
@@ -137,7 +140,7 @@ def main():
             gene_body = get_gene_body(gene, gene_metadata.genome_intervals)
             gene_length, gene_body_plot = display_gene_body(gene_body) 
 
-            gene_level_fitting_results_in_current_gene, combined_plot = get_gene_result(
+            gene_level_fitting_results_in_current_gene, combined_plot, has_data = get_gene_result(
                 gene, 
                 gene_length, 
                 TIME_POINTS,
@@ -146,7 +149,7 @@ def main():
                 gene_body_plot
             )
 
-            gene_level_fitting_results_in_current_gene_long_timecourse, combined_plot_long_timecourse = get_gene_result(
+            gene_level_fitting_results_in_current_gene_long_timecourse, combined_plot_long_timecourse, has_data_long_timecourse = get_gene_result(
                 gene, 
                 gene_length, 
                 TIME_POINTS_LONG_TIMECOURSE,
@@ -155,7 +158,7 @@ def main():
                 gene_body_plot
             )
 
-            gene_level_fitting_results_in_current_gene_haploid, combined_plot_haploid = get_gene_result(
+            gene_level_fitting_results_in_current_gene_haploid, combined_plot_haploid, has_data_haploid = get_gene_result(
                 gene, 
                 gene_length, 
                 TIME_POINTS_HAPLOID,
@@ -165,18 +168,36 @@ def main():
             )
             
             col1, col2, col3, col4, col5, col6 = st.columns([2, 8, 2, 8, 2, 8], border=True)
-            with col1:
-                display_gene_level_metrics(col1, gene_level_fitting_results_in_current_gene)
-            with col2:
-                st.altair_chart(combined_plot, use_container_width=True, theme=None)
-            with col3:
-                display_gene_level_metrics(col3, gene_level_fitting_results_in_current_gene_long_timecourse)
-            with col4:
-                st.altair_chart(combined_plot_long_timecourse, use_container_width=True, theme=None)
-            with col5:
-                display_gene_level_metrics(col5, gene_level_fitting_results_in_current_gene_haploid)
-            with col6:
-                st.altair_chart(combined_plot_haploid, use_container_width=True, theme=None)
+            if has_data:
+                with col1:
+                    display_gene_level_metrics(col1, gene_level_fitting_results_in_current_gene)
+                with col2:
+                    st.altair_chart(combined_plot, use_container_width=True, theme=None)
+            else:
+                with col1:
+                    st.warning("No data found")
+                with col2:
+                    st.warning("No data found")
+            if has_data_long_timecourse:
+                with col3:
+                    display_gene_level_metrics(col3, gene_level_fitting_results_in_current_gene_long_timecourse)
+                with col4:
+                    st.altair_chart(combined_plot_long_timecourse, use_container_width=True, theme=None)
+            else:
+                with col3:
+                    st.warning("No data found")
+                with col4:
+                    st.warning("No data found")
+            if has_data_haploid:
+                with col5:
+                    display_gene_level_metrics(col5, gene_level_fitting_results_in_current_gene_haploid)
+                with col6:
+                    st.altair_chart(combined_plot_haploid, use_container_width=True, theme=None)
+            else:
+                with col5:
+                    st.warning("No data found")
+                with col6:
+                    st.warning("No data found")
 
             st.success("Plot generated successfully")
     else:
