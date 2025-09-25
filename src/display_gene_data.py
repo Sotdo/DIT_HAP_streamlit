@@ -96,7 +96,7 @@ def display_insertion_level_data(gene_length: int, insertion_level_anno_and_resu
         x=alt.X("Generations:Q", title="Generations", scale=alt.Scale(domain=(0, int(max(timepoints.values()))+1))),
         y=alt.Y("LFC:Q", title="LFC", scale=alt.Scale(domain=(-3, 8))),
         color=alt.condition(point_selector, "num_of_imputed_insertions:N", alt.value("lightgray"), legend=alt.Legend(orient="right", title="Imputation level")),
-        size=alt.Size("weights:Q", title="-log10(padj)"),
+        size=alt.Size("weights:Q", title="-log10(padj)", scale=alt.Scale(type='symlog')),
     ).add_params(point_selector).transform_filter(point_selector)
 
     return insertion_level_data_plot1, insertion_level_data_plot2
